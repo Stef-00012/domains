@@ -1,0 +1,14 @@
+{
+    "record": {
+        "CNAME": "stef-00012.github.io",
+        "MX": [
+            {
+                "server": "mail.stefdp.lol",
+                "priority": 20
+            }
+        ],
+        "TXT": [
+            "v=spf1 mx a -all"
+        ]
+    }
+}
