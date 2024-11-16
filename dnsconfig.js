@@ -170,10 +170,10 @@ for (var subdomain in domains) {
     if (domainData.record.TXT) {
         if (Array.isArray(domainData.record.TXT)) {
             for (var txt in domainData.record.TXT) {
-                commit[domain].records.push(TXT(subdomainName, domainData.record.TXT[txt].length <= 255 ? "\"" + domainData.record.TXT[txt] + "\"" : domainData.record.TXT[txt]));
+                commit[domain].records.push(TXT(subdomainName, domainData.record.TXT[txt].length <= 2046 ? "\"" + domainData.record.TXT[txt] + "\"" : domainData.record.TXT[txt]));
             }
         } else {
-            commit[domain].records.push(TXT(subdomainName, domainData.record.TXT.length <= 255 ? "\"" + domainData.record.TXT + "\"" : domainData.record.TXT));
+            commit[domain].records.push(TXT(subdomainName, domainData.record.TXT.length <= 2046 ? "\"" + domainData.record.TXT + "\"" : domainData.record.TXT));
         }
     }
 }
@@ -185,5 +185,5 @@ var options = {
 for (var commitDomain in commit) {
     commit[commitDomain].records.push(TXT("_zone-updated", "\"" + Date.now().toString() + "\""))
 
-    D(commitDomain, registrar, dnsProvider, options, /*ignored,*/ commit[commitDomain].records);
+    D(commitDomain, registrar, dnsProvider, options, commit[commitDomain].records);
 }
