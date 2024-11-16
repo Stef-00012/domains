@@ -92,9 +92,9 @@ for (var subdomain in domains) {
             commit[domain].records.push(
                 DS(
                     subdomainName,
-                    dsRecord.key_tag,
+                    dsRecord.keyTag,
                     dsRecord.algorithm,
-                    dsRecord.digest_type,
+                    dsRecord.digestType,
                     dsRecord.digest
                 )
             );
