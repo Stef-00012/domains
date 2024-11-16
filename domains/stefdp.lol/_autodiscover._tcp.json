@@ -4,8 +4,8 @@
             {
                 "weight": 65535,
                 "port": 443,
-                "target": null,
-                "priority": 1
+                "target": "mail.stefdp.lol",
+                "priority": 0
             }
         ]
     }
