@@ -1,0 +1,12 @@
+{
+  "record": {
+    "SRV": [
+      {
+        "weight": 65535,
+        "port": 443,
+        "target": "mail.stefdp.lol",
+        "priority": 0
+      }
+    ]
+  }
+}
