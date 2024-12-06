@@ -1,7 +1,7 @@
 {
   "record": {
     "TXT": [
-      "v=DMARC1; p=none; rua=mailto:dmarc-reports@stefdp.lol; ruf=mailto:dmarc-reports@stefdp.lol; fo=0; adkim=r; aspf=r; pct=100; rf=afrf; ri=86400; sp=none"
+      "v=DMARC1; p=reject; rua=mailto:dmarc-reports@stefdp.lol; ruf=mailto:dmarc-reports@stefdp.lol; fo=0; adkim=r; aspf=r; pct=100; rf=afrf; ri=86400; sp=none"
     ]
   }
 }
