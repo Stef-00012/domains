@@ -1,6 +1,8 @@
 {
     "record": {
-        "CNAME": "stef-00012.github.io",
+        "A": [
+            "173.208.244.6"
+        ],
         "MX": [
             {
                 "server": "mail.stefdp.lol",
