@@ -39,8 +39,8 @@ for (var subdomain in domains) {
     }
     
     // Handle mail
-    if (commit[domain].mail) {
-        var mailConfig = commit[domain].mail;
+    if (domainData.mail) {
+        var mailConfig = domainData.mail;
         
         commit[domain].records.push(
             A(subdomainName, IP("173.208.244.6")),
