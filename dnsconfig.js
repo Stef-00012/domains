@@ -47,15 +47,15 @@ for (var subdomain in domains) {
 		);
 
 		if (mailConfig.DKIM) {
-			var DKIMSubdomainName = "dkim._domainkey." + subdomainName;
+			var DKIMSubdomainName = "dkim._domainkey" + (subdomainName === "@" ? "" : "." + subdomainName);
 
 			commit[domain].records.push(TXT(DKIMSubdomainName, mailConfig.DKIM));
 		}
 
-		var autodiscoverSubdomainName = "autodiscover." + subdomainName;
-		var autodiscoverTcpSubdomainName = "_autodiscover._tcp." + subdomainName;
-		var autoconfigSubdomainName = "autoconfig." + subdomainName;
-		var DMARCSubdomainName = "_dmarc." + subdomainName;
+		var autodiscoverSubdomainName = "autodiscover" + (subdomainName === "@" ? "" : "." + subdomainName);
+		var autodiscoverTcpSubdomainName = "_autodiscover._tcp" + (subdomainName === "@" ? "" : "." + subdomainName);
+		var autoconfigSubdomainName = "autoconfig" + (subdomainName === "@" ? "" : "." + subdomainName);
+		var DMARCSubdomainName = "_dmarc" + (subdomainName === "@" ? "" : "." + subdomainName);
 
 		commit[domain].records.push(
 			CNAME(autodiscoverSubdomainName, "mail.stefdp.lol.")
