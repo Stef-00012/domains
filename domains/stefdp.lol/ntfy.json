@@ -1,14 +1,8 @@
 {
+    "mail": {
+        "DKIM": "v=DKIM1;k=rsa;t=s;s=email;p=MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAmjjpzxdHQb/Kiy0Xl0fwgqMOVAYibAWrZrebP7VvH9K8QP+cMWNrtsvi3aUPjX4jcu5KdVsjk3rn7XGHV9fvKMlgmh7AtqoxergjP7t6A4Fn4sh/wyhBc208QnGqxmJZT823zassPcLtNj4tBwgZRlubCGGwuvY8mm2iCeE4nblDfbNppd6exJjjVOmNzZjMV+oIoh0uZPM1c1IFqI99vNtPnFo/mEL72sz9xLAcdIdEig6jWMip8YjUj66m6Thmn63QpGQeKlytfSB6mTo+OYOUWLnmxwXaKYpY6KiDhS9JXJHpL84AgEABKRX2jhtWmLpiudy1M4tUzTkOQ+c01wIDAQAB"
+    },
     "record": {
-        "A": [
-            "173.208.244.6"
-        ],
-        "MX": [
-            {
-                "server": "mail.stefdp.lol",
-                "priority": 20
-            }
-        ],
         "TXT": [
             "v=spf1 mx a -all"
         ]

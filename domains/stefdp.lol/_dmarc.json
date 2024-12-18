@@ -1,7 +1,0 @@
-{
-    "record": {
-        "TXT": [
-            "v=DMARC1; p=reject; rua=mailto:8bf26ca1a0014242a282f9727ff8f1f0@dmarc-reports.cloudflare.net"
-        ]
-    }
-}

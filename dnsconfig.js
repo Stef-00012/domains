@@ -37,6 +37,63 @@ for (var subdomain in domains) {
     if (!commit[domain]) commit[domain] = {
         records: []
     }
+    
+    // Handle mail
+    if (commit[domain].mail) {
+        var mailConfig = commit[domain].mail;
+        
+        commit[domain].records.push(
+            A(subdomainName, IP("173.208.244.6")),
+            MX(subdomainName, 20, "mail.stefdp.lol.")
+        );
+        
+        if (mailConfig.DKIM) {
+            var DKIMSubdomainName = `dkim._domainkey.${subdomainName}`;
+            
+            commit[DKIMSubdomainName] = {
+                records: [
+                    TXT(DKIMSubdomainName, mailConfig.DKIM)
+                ]
+            };
+        }
+        
+        var autodiscoverSubdomainName = `autodiscover.${subdomainName}`;
+        var autodiscoverTcpSubdomainName = `_autodiscover._tcp.${subdomainName}`;
+        var autoconfigSubdomainName = `autoconfig.${subdomainName}`;
+        var DMARCSubdomainName = `_dmarc.${subdomainName}`;
+        
+        commit[autodiscoverSubdomainName] = {
+            records: [
+                CNAME(autodiscoverSubdomainName, "mail.stefdp.lol.")
+            ]
+        };
+        
+        commit[autodiscoverTcpSubdomainName] = {
+            records: [
+                SRV(
+                    autodiscoverTcpSubdomainName,
+                    0,
+                    65535,
+                    443,
+                    "mail.stefdp.lol."
+                )
+            ]
+        };
+        
+        commit[autoconfigSubdomainName] = {
+            records: [
+                CNAME(autoconfigSubdomainName, "mail.stefdp.lol.")
+            ]
+        };
+        
+        commit[DMARCSubdomainName] = {
+            records: [
+                TXT(DMARCSubdomainName, mailConfig.DMARC || "v=DMARC1; p=reject")
+            ]
+        };
+        
+        domainData.records = domainData.records || {};
+    }
 
     // Handle A records
     if (domainData.record.A) {

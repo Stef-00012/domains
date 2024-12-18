@@ -1,7 +1,0 @@
-{
-  "record": {
-    "TXT": [
-      "v=DKIM1;k=rsa;t=s;s=email;p=MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAuJU26sfR/hwjYHyGaywGru18nn2av6JpkkW/dsMBFzQExRH49UAcotTFGRwPShWiz4Wt6KkO9m4Lg5a+j1QDrjJHxqZDSfv9g40FDZlxPqMcS78XMM8YIkcLclGqK4w7YwqKdwdRa0vTq/XZujgs182VPPX9qttlGUxHCXbu+rJYYyIALr6dK9901gFdu+5fIeTYk02Ee4bZ8H56mdkTYUNArTrxNo+QExHBDm5fY0X5DvBg2S06/uuknpgoOsMfOEPZEDbUyf7qaEuOCM2lPsts9Lvb+gfxz4LYDj85K6lFkjiY5BabBthS6E2hyoxi8x7VFbx07YGonciAq/8AfwIDAQAB"
-    ]
-  }
-}
