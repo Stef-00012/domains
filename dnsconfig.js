@@ -48,7 +48,7 @@ for (var subdomain in domains) {
         );
         
         if (mailConfig.DKIM) {
-            var DKIMSubdomainName = "dkim._domainkey";
+            var DKIMSubdomainName = "dkim._domainkey" + subdomainName;
             
             commit[DKIMSubdomainName] = {
                 records: [
@@ -57,10 +57,10 @@ for (var subdomain in domains) {
             };
         }
         
-        var autodiscoverSubdomainName = "autodiscover";
-        var autodiscoverTcpSubdomainName = "_autodiscover._tcp";
-        var autoconfigSubdomainName = "autoconfig";
-        var DMARCSubdomainName = "_dmarc";
+        var autodiscoverSubdomainName = "autodiscover" + subdomainName;
+        var autodiscoverTcpSubdomainName = "_autodiscover._tcp" + subdomainName;
+        var autoconfigSubdomainName = "autoconfig" + subdomainName;
+        var DMARCSubdomainName = "_dmarc" + subdomainName;
         
         commit[autodiscoverSubdomainName] = {
             records: [
