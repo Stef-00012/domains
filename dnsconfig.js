@@ -49,7 +49,7 @@ for (var subdomain in domains) {
 		if (mailConfig.DKIM) {
 			var DKIMSubdomainName = "dkim._domainkey" + (subdomainName === "@" ? "" : "." + subdomainName);
 
-			commit[domain].records.push(TXT(DKIMSubdomainName, mailConfig.DKIM));
+			commit[domain].records.push(TXT(DKIMSubdomainName, '"' + mailConfig.DKIM + '"'));
 		}
 
 		var autodiscoverSubdomainName = "autodiscover" + (subdomainName === "@" ? "" : "." + subdomainName);
@@ -70,7 +70,7 @@ for (var subdomain in domains) {
 		);
 
 		commit[domain].records.push(
-			TXT(DMARCSubdomainName, mailConfig.DMARC || "v=DMARC1; p=reject")
+			TXT(DMARCSubdomainName, mailConfig.DMARC || '"v=DMARC1; p=reject"')
 		);
 
 		domainData.record = domainData.record || {};
