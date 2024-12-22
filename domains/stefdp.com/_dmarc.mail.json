@@ -1,0 +1,7 @@
+{
+    "record": {
+        "TXT": [
+            "v=DMARC1; p=reject"
+        ]
+    }
+}
