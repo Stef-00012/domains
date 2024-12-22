@@ -43,7 +43,7 @@ for (var subdomain in domains) {
 
 		commit[domain].records.push(
 			A(subdomainName, IP("173.208.244.6")),
-			MX(subdomainName, 20, "mail.stefdp.lol.")
+			MX(subdomainName, 20, "mail.stefdp.com.")
 		);
 
 		if (mailConfig.DKIM) {
@@ -58,15 +58,15 @@ for (var subdomain in domains) {
 		var DMARCSubdomainName = "_dmarc" + (subdomainName === "@" ? "" : "." + subdomainName);
 
 		commit[domain].records.push(
-			CNAME(autodiscoverSubdomainName, "mail.stefdp.lol.")
+			CNAME(autodiscoverSubdomainName, "mail.stefdp.com.")
 		);
 
 		commit[domain].records.push(
-			SRV(autodiscoverTcpSubdomainName, 0, 65535, 443, "mail.stefdp.lol.")
+			SRV(autodiscoverTcpSubdomainName, 0, 65535, 443, "mail.stefdp.com.")
 		);
 
 		commit[domain].records.push(
-			CNAME(autoconfigSubdomainName, "mail.stefdp.lol.")
+			CNAME(autoconfigSubdomainName, "mail.stefdp.com.")
 		);
 
 		commit[domain].records.push(
