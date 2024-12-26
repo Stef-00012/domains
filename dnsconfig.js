@@ -1,27 +1,6 @@
 var registrar = NewRegistrar("none");
 var dnsProvider = DnsProvider(NewDnsProvider("cloudflare"), 0);
 
-function getDomainsList(filesPath) {
-	var result = [];
-	var files = glob.apply(null, [filesPath, true, ".json"]);
-
-	for (var i = 0; i < files.length; i++) {
-		var fileSplit = files[i].split("/");
-
-		var name = fileSplit.pop().replace(/\.json$/, "");
-
-		var domain = fileSplit.pop();
-
-		result.push({
-			domain: domain,
-			name: name,
-			data: require(files[i]),
-		});
-	}
-
-	return result;
-}
-
 var domains = getDomainsList("./domains");
 
 var commit = {};
@@ -41,37 +20,7 @@ for (var subdomain in domains) {
 	if (domainData.mail) {
 		var mailConfig = domainData.mail;
 
-		commit[domain].records.push(
-			A(subdomainName, IP("173.208.244.6")),
-			MX(subdomainName, 20, "mail.stefdp.com.")
-		);
-
-		if (mailConfig.DKIM) {
-			var DKIMSubdomainName = "dkim._domainkey" + (subdomainName === "@" ? "" : "." + subdomainName);
-
-			commit[domain].records.push(TXT(DKIMSubdomainName, '"' + mailConfig.DKIM + '"'));
-		}
-
-		var autodiscoverSubdomainName = "autodiscover" + (subdomainName === "@" ? "" : "." + subdomainName);
-		var autodiscoverTcpSubdomainName = "_autodiscover._tcp" + (subdomainName === "@" ? "" : "." + subdomainName);
-		var autoconfigSubdomainName = "autoconfig" + (subdomainName === "@" ? "" : "." + subdomainName);
-		var DMARCSubdomainName = "_dmarc" + (subdomainName === "@" ? "" : "." + subdomainName);
-
-		commit[domain].records.push(
-			CNAME(autodiscoverSubdomainName, "mail.stefdp.com.")
-		);
-
-		commit[domain].records.push(
-			SRV(autodiscoverTcpSubdomainName, 0, 65535, 443, "mail.stefdp.com.")
-		);
-
-		commit[domain].records.push(
-			CNAME(autoconfigSubdomainName, "mail.stefdp.com.")
-		);
-
-		commit[domain].records.push(
-			TXT(DMARCSubdomainName, mailConfig.DMARC || '"v=DMARC1; p=reject"')
-		);
+		handleMail(mailConfig, domain);
 
 		domainData.record = domainData.record || {};
 	}
@@ -238,5 +187,64 @@ for (var commitDomain in commit) {
 		dnsProvider,
 		options,
 		commit[commitDomain].records
+	);
+}
+
+function getDomainsList(filesPath) {
+	var result = [];
+	var files = glob.apply(null, [filesPath, true, ".json"]);
+
+	for (var i = 0; i < files.length; i++) {
+		var fileSplit = files[i].split("/");
+
+		var name = fileSplit.pop().replace(/\.json$/, "");
+
+		var domain = fileSplit.pop();
+
+		result.push({
+			domain: domain,
+			name: name,
+			data: require(files[i])
+		});
+	}
+
+	return result;
+}
+
+function handleMail(config, domain) {
+	commit[domain].records.push(MX(subdomainName, 20, "mail.stefdp.com."));
+
+	if (config.DKIM) {
+		var DKIMSubdomainName =
+			"dkim._domainkey" + (subdomainName === "@" ? "" : "." + subdomainName);
+
+		commit[domain].records.push(
+			TXT(DKIMSubdomainName, '"' + config.DKIM + '"')
+		);
+	}
+
+	var autodiscoverSubdomainName =
+		"autodiscover" + (subdomainName === "@" ? "" : "." + subdomainName);
+	var autodiscoverTcpSubdomainName =
+		"_autodiscover._tcp" + (subdomainName === "@" ? "" : "." + subdomainName);
+	var autoconfigSubdomainName =
+		"autoconfig" + (subdomainName === "@" ? "" : "." + subdomainName);
+	var DMARCSubdomainName =
+		"_dmarc" + (subdomainName === "@" ? "" : "." + subdomainName);
+
+	commit[domain].records.push(
+		CNAME(autodiscoverSubdomainName, "mail.stefdp.com.")
+	);
+
+	commit[domain].records.push(
+		SRV(autodiscoverTcpSubdomainName, 0, 65535, 443, "mail.stefdp.com.")
+	);
+
+	commit[domain].records.push(
+		CNAME(autoconfigSubdomainName, "mail.stefdp.com.")
+	);
+
+	commit[domain].records.push(
+		TXT(DMARCSubdomainName, config.DMARC || '"v=DMARC1; p=reject"')
 	);
 }

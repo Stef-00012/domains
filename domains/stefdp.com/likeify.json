@@ -3,6 +3,9 @@
       "DKIM": "v=DKIM1;k=rsa;t=s;s=email;p=MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAh5O34JRZ1pzzEVLX4tJkOt8hfx/9mI4SW5vDWjzlg3XcQzfkCCmI5dWMNDKk66YARieXzmEuvMBjDv9LoJfI6WslT2kxaGhp1JLz/p5SVAqHNcDjfa6E0iTgTFgixJ0jjS1seo+oX7Gr7H37HjwWzHdSgoCZ5cZKg6N2GPePx0J2vjWt//Df1hNeim6mdTqvFVKg8m1F7ku9nLP9+5iipOguYJ+eGrgLpcFmUCwxdzaqOvmDFN4nEF6ZiB3Y+xPLwlIaN9S1l8ZsYvBNzp1pYQ2fz+iaphH9l3BhxFD4Z9Bnx6W6wJwM7uTVqbM9wVsthh7drVRe60/pkd3wTHMZ2QIDAQAB"
   },
   "record": {
+    "A": [
+      "173.208.244.6"
+    ],
       "TXT": [
         "v=spf1 mx a -all"
       ]
