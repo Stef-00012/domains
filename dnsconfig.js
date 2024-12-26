@@ -250,3 +250,5 @@ function handleMail(config, domain) {
 		TXT(DMARCSubdomainName, config.DMARC || '"v=DMARC1; p=reject"')
 	);
 }
+
+// qualche edit
