@@ -190,6 +190,7 @@ for (var commitDomain in commit) {
 	);
 }
 
+// Read all the domain files
 function getDomainsList(filesPath) {
 	var result = [];
 	var files = glob.apply(null, [filesPath, true, ".json"]);
@@ -211,6 +212,7 @@ function getDomainsList(filesPath) {
 	return result;
 }
 
+// Handle mail configs
 function handleMail(config, domain) {
 	commit[domain].records.push(MX(subdomainName, 20, "mail.stefdp.com."));
 
