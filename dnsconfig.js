@@ -247,6 +247,6 @@ function handleMail(config, domain) {
 	);
 
 	commit[domain].records.push(
-		TXT(DMARCSubdomainName, config.DMARC || '"v=DMARC1; p=reject"')
+		TXT(DMARCSubdomainName, '"' + config.DMARC + '"' || '"v=DMARC1; p=reject"')
 	);
 }
