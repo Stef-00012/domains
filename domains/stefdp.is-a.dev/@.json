@@ -3,7 +3,7 @@
         "CNAME": "proxy.stefdp.lol",
         "MX": [
             {
-                "server": "mail.stefdp.lol",
+                "server": "mail.stefdp.com",
                 "priority": 20
             }
         ],
