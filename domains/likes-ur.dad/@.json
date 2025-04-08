@@ -1,0 +1,14 @@
+{
+    "mail": {
+        "DKIM": "v=DKIM1;k=rsa;t=s;s=email;p=MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAzAdYCYFwpJbi5uIpa1Iq36iw1ixXUK6t5PhQVOyFONGOKKtvSUMfl8Ebzw426o0yI2JQ3z0wW0UoPJXRhUndYjL68jUc506mUh8cx6DP0dvH/ePABdwA7jJ4OKtc86RX2KmKxNgv/RjHBhqHE1Rnv1O3GqqQUHJf6DzL1HqrzITdLltJNK0zn0PdUHZy7id+XQCLKjnMwQbvl6QpnXOci6pdX1AsafCSWRDwgzodBVRX2hsT5htVMhMUtQF0aYqAFJALByEsFSl+lG/toQS7id+xkH7fuZJ/CBAnaxnla6vYbLW/6W+cwIFXlbN5MH0H6o00ZqKvEQ3DZZDL1tPXDQIDAQAB",
+        "DMARC": "v=DMARC1; p=reject; rua=mailto:8bef7ed43f274e6fb2d5fea10ec4f576@dmarc-reports.cloudflare.net"
+    },
+    "record": {
+        "A": [
+            "173.208.244.6"
+        ],
+        "TXT": [
+            "v=spf1 mx a -all"
+        ]
+    }
+}
