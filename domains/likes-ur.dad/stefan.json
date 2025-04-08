@@ -1,0 +1,44 @@
+{
+  "owner": {
+    "username": "lungustefan",
+    "email": "hi@lungustefan.ro",
+    "discord": "753179409682399332",
+    "phone": "+40770618625",
+    "mobile": "+40756450998",
+    "email": "hi@lungustefan.ro"
+  },
+  "record": {
+    "NS": [
+      "ns.lungustefan.ro",
+      "ns2.lungustefan.ro",
+      "ns3.lungustefan.ro",
+      "ns4.lungustefan.ro"
+    ],
+    "DS": [
+      {
+        "keyTag": 351,
+        "algorithm": 13,
+        "digestType": 1,
+        "digest": "02D33DA00C700A1559A780184AC64ED5150FDF09"
+      },
+      {
+        "keyTag": 351,
+        "algorithm": 13,
+        "digestType": 2,
+        "digest": "9EFF3B1A21DB77D827CF3F738253C65DB4199FF136C10ED1677E7D354F487E54"
+      },
+      {
+        "keyTag": 46082,
+        "algorithm": 13,
+        "digestType": 1,
+        "digest": "0397CCE3C2723620218333B28A418D14C91F97E4"
+      },
+      {
+        "keyTag": 46082,
+        "algorithm": 13,
+        "digestType": 2,
+        "digest": "7A001CB6803E90E8420EACBD4DD810FE2D5F302AA050AC47ADBF26C7A01FB3C0"
+      }
+    ]
+  }
+}
