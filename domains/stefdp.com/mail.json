@@ -1,11 +1,11 @@
 {
     "record": {
         "A": [
-            "173.208.244.6"
+            "173.208.137.167"
         ],
         "MX": [
             {
-                "server": "mail.stefdp.lol",
+                "server": "mail.stefdp.com",
                 "priority": 20
             }
         ],
