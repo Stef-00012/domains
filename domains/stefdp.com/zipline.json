@@ -1,5 +1,16 @@
 {
+    "mail": {
+        "DKIM": "v=DKIM1;k=rsa;t=s;s=email;p=MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAqm7IFdPVtlYwMdsBYHvlQoXRC2wYyQOn6H8pTHUxPtY84Pizvnyf9o+Ki8uLF8oCCK5U3dChjx0J+ZxL7bGYUki9JECu6O3rhDKaRyaj0U9uEiO082kjkqyhw9GOvf1pnWmnBHtRSEGci1x+xFkx0NJCiXD+HypKjKfxC/KJW2g3+HmP1wVvlCN2ryjHFj0p2G9yfQQ0rkTRiiQZ2R7+UBGTO199+E+Rp64FE54OotEmOX4Q3+Elyq49PM6kpep6urZQmpSO983uzA+mOT4rA773lZ+TiAetmD1wrIX+kLPsyNpvO65g3NV1nCOhyiHsmDfWKTURlo/0zPfiCoilTwIDAQAB"
+    },
     "record": {
-        "CNAME": "stef-00012.github.io"
+        "A": [
+            "185.199.109.153",
+            "185.199.108.153",
+            "185.199.110.153",
+            "185.199.111.153"
+        ],
+        "TXT": [
+            "v=spf1 mx a -all"
+        ]
     }
 }
