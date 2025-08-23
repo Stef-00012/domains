@@ -11,7 +11,8 @@
             "2604:4300:a:353:2b9:d7ff:fe5e:d79"
         ],
         "TXT": [
-            "v=spf1 mx a -all"
+            "v=spf1 mx a -all",
+            "google-site-verification=8if-MVpHY9kXr55g9rmXN88Lir5RE2TrnThh8GxMzbs"
         ]
     }
 }
