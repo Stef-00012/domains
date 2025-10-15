@@ -1,6 +1,6 @@
 {
     "mail": {
-        "DKIM": "v=DKIM1;k=rsa;t=s;s=email;p=MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEArFRsoRpBZYTRGZ0k7HeBPBakjMH4OHV++5DM4y+AubKMLgmFTOXdUPfA/lIHtYHhS3mEBfF57p0rcqYpGMCy1I0L0g5FMNRa+v2hUn4RlwHft5dbK6HnuofZDzQjngz1d8GQ2MwCuRCQ7NiqoNHFEESALsfUbgJtFx8cn5m82haVvE6LTsemb2+5s9N6bs/qYxUhQigbBQzbCUOxsmOtjeeg0w3BDqz+lhYzCZ+VvitbqP44DhpXGxINEYj6acva9d2SVSbJbWPylkzsmf/XhtaWXX09cMCXN0WoYXQ2bdu9QPABnlefB/iTO2iBnRwrVLdz1FfjSCFqz/g+5v0tuwIDAQAB",
+        "DKIM": "v=DKIM1;k=rsa;t=s;s=email;p=MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA2w6jCyjE4qmkTFCfUTaYBheGQBMs2CwdxZlYgpyC7i7AtAAepGVpW+R2MUMYukRuwSySNktGWwfksRNIHjk4WquO3FThke2LxOy1WAa7CHHS0webg01bYIce6rplZICsZy6FWIlG/vcriTz5vyq3+QN7mkzlp42nBbOVTW89NVxxh1rb+OrratNBcR7/0fKNoJr1pZWcLHEm7D7SfFdyOqlBVXBy3zU6/DJNFPr+DepvokJDfNc4G6BlMYik3DpqK6rO9D2JYWdLc226iltn5HE9f1XbncV908l+HG8zOhnr2cJOy2IxDE+qDzI06XMd9iBgXRripnzwk+jsZNI5kQIDAQAB",
         "DMARC": "v=DMARC1; p=reject; rua=mailto:58573449e3944097a93e51762e4ca5fb@dmarc-reports.cloudflare.net;"
     },
     "record": {
