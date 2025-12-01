@@ -19,7 +19,7 @@ jobs:
         name: DNS
         runs-on: docker
         container:
-            options: --platform linux/arm64
+            options: --platform linux/amd64
         steps:
             - uses: actions/checkout@v4
 
