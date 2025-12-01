@@ -18,6 +18,8 @@ jobs:
     dns:
         name: DNS
         runs-on: docker
+        container:
+            platform: linux/amd64
         steps:
             - uses: actions/checkout@v4
 
