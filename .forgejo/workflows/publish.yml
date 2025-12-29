@@ -17,7 +17,7 @@ concurrency:
 jobs:
     dns:
         name: DNS
-        runs-on: docker
+        runs-on: node
         steps:
             - uses: actions/checkout@v4
 
